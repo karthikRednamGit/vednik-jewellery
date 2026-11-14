@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
-const cloudflarePagesExport = process.env.CLOUDFLARE_PAGES_EXPORT === "1";
+const cloudflarePagesExport =
+  process.env.CLOUDFLARE_PAGES_EXPORT === "1" || process.env.CF_PAGES === "1";
 
 const nextConfig: NextConfig = {
   /* config options here */

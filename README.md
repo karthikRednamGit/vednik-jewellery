@@ -20,13 +20,13 @@ Set `NEXT_PUBLIC_SITE_URL` to the final HTTPS site URL during the Cloud Run buil
 
 ## No-billing sample deployment on Cloudflare Pages
 
-The current sample storefront uses static sample products, browser-local cart storage and WhatsApp checkout. It can be exported as static files without a Google Cloud billing account. For a local static build, run:
+The current sample storefront uses static sample products, browser-local cart storage and WhatsApp checkout. It can be exported as static files without a Google Cloud billing account. Cloudflare Pages sets `CF_PAGES=1` during its build, which enables static export automatically. For a local static build, run:
 
 ```sh
 CLOUDFLARE_PAGES_EXPORT=1 npx next build
 ```
 
-This creates the `out/` folder. In Cloudflare Pages, use `npx next build` as the build command, `out` as the output directory and set `CLOUDFLARE_PAGES_EXPORT=1` as a build environment variable. Set `NEXT_PUBLIC_SITE_URL` to the final `pages.dev` URL and `NEXT_PUBLIC_WHATSAPP_BUSINESS_NUMBER` to the business number before the first build. A Git-connected Pages project needs this repository in a Git host; alternatively, upload the generated `out/` static files directly through Cloudflare.
+This creates the `out/` folder. In Cloudflare Pages, use `npx next build` as the build command and `out` as the output directory; no custom export flag is needed there. Set `NEXT_PUBLIC_SITE_URL` to the final `pages.dev` URL and `NEXT_PUBLIC_WHATSAPP_BUSINESS_NUMBER` to the business number if checkout should open directly to the business. A Git-connected Pages project needs this repository in a Git host; alternatively, upload the generated `out/` static files directly through Cloudflare.
 
 This static sample does not persist orders to Supabase. Add a server-backed host and connected database when order persistence or the admin dashboard is needed.
 
