@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowDownRight, ArrowRight, ArrowUpRight, Camera } from "lucide-react";
 import { categories, featuredProducts, newArrivals } from "@/lib/demo-catalog";
 import { ProductCard } from "@/components/storefront/product-card";
+import { HeroVideo } from "@/components/storefront/hero-video";
 import { SiteFooter, SiteHeader } from "@/components/storefront/site-chrome";
 
 function Eyebrow({ children }: { children: React.ReactNode }) {
@@ -35,14 +36,7 @@ export default function Home() {
       <SiteHeader />
       <main id="top">
         <section className="hero" aria-labelledby="hero-title">
-          <Image
-            className="hero-image"
-            src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=2200&q=90"
-            alt="A sculptural gold necklace, photographed in warm afternoon light"
-            fill
-            priority
-            sizes="100vw"
-          />
+          <HeroVideo />
           <div className="hero-wash" />
           <div className="hero-content">
             <Eyebrow>Jewels with a little soul</Eyebrow>
