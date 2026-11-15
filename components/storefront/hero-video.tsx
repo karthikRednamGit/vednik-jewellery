@@ -32,7 +32,7 @@ export function HeroVideo() {
       loop
       playsInline
       preload="metadata"
-      poster="/products/gulabi-earrings-01.webp"
+      poster="/vedshashe-hero-poster.jpg"
       aria-hidden="true"
     >
       <source src="/vedshashe-hero-video.mp4" type="video/mp4" />
