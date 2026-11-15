@@ -19,8 +19,10 @@ const nextConfig: NextConfig = {
   experimental: {
     agentFeedback: true,
   },
-  cacheComponents: !cloudflarePagesExport,
-  partialPrefetching: !cloudflarePagesExport,
+  // Cache Components relies on Node.js event-loop behavior that workerd does
+  // not guarantee. This storefront does not use `use cache`, so keep it off
+  // for Cloudflare Workers and use Next.js's standard route rendering.
+  cacheComponents: false,
   turbopack: {
     rules: {
       "*.css": {
