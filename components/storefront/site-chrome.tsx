@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { ArrowRight, Camera, Menu, Search, ShoppingBag } from "lucide-react";
+import { ArrowRight, Camera, Search, ShoppingBag } from "lucide-react";
 import { CartCount } from "@/components/storefront/cart-provider";
+import { MobileMenu } from "@/components/storefront/mobile-menu";
 
 export function SiteHeader() {
   return <>
@@ -8,7 +9,7 @@ export function SiteHeader() {
       <span>Complimentary insured shipping on all orders</span><span className="announcement-divider">·</span><span>Thoughtfully made in India</span>
     </div>
     <header className="site-header">
-      <Link className="icon-button mobile-menu" href="/shop" aria-label="Browse categories"><Menu size={20} strokeWidth={1.5} /></Link>
+      <MobileMenu />
       <nav className="main-nav" aria-label="Main navigation">
         <Link href="/shop">Shop</Link><Link href="/#collections">Collections</Link><Link href="/#our-story">Our story</Link>
       </nav>

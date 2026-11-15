@@ -41,6 +41,7 @@ export function AddToBagButton({ product, className = "", quantity = 1 }: { prod
 export function ProductPurchase({ product }: { product: Product }) {
   const [quantity, setQuantity] = useState(1);
   return <div className="product-purchase">
+    <div className="product-purchase-price"><span>Price</span><strong>{formatPrice(product.price)}</strong></div>
     <div className="quantity-stepper" aria-label="Choose quantity">
       <button type="button" aria-label="Decrease quantity" onClick={() => setQuantity((current) => Math.max(1, current - 1))}><Minus size={14} /></button>
       <span aria-live="polite">{quantity}</span>
